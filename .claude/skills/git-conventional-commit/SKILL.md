@@ -1,5 +1,5 @@
 ---
-name: conventional-commit
+name: git-conventional-commit
 description: Creates git commits following the Conventional Commits v1.0.0 specification. Inspects staged and unstaged changes, classifies them into type and scope, drafts the message, and asks for clarification with 2–3 numbered suggestions only when context is ambiguous. Use when the user wants to commit changes following Conventional Commits, mentions "conventional commit", "padrão de commit", or invokes a commit slash command like /commit.
 ---
 
