@@ -6,8 +6,14 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**/*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc}"],
-    "experimentalScannerIgnores": [".next", "node_modules", "out", "build", "next-env.d.ts"]
+    "includes": [
+      "**/*.{js,jsx,ts,tsx,mjs,cjs,json,jsonc}",
+      "!!**/.next",
+      "!!**/node_modules",
+      "!!**/out",
+      "!!**/build",
+      "!!**/next-env.d.ts"
+    ]
   },
   "formatter": {
     "enabled": true,
