@@ -1,0 +1,144 @@
+name: Solicitação de Melhoria ou Alteração
+description: Sugira uma melhoria, alteração de comportamento ou novo recurso em plugins, skills ou agents.
+title: "[Melhoria]: "
+labels: ["enhancement", "triage"]
+type: feature
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por contribuir com o **bnp-skillset**! 🚀
+        Quanto mais contexto você trouxer (exemplos de prompt, saída atual, saída esperada), mais rápido conseguimos avaliar e implementar.
+
+  - type: dropdown
+    id: tipo-solicitacao
+    attributes:
+      label: Tipo de solicitação
+      description: O que você está pedindo?
+      options:
+        - Melhoria em skill/agent existente
+        - Alteração de comportamento
+        - Nova skill
+        - Novo agent
+        - Novo plugin
+        - Documentação / README
+        - Outro
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin afetado
+      description: Em qual plugin está (ou deveria estar) o recurso?
+      multiple: true
+      options:
+        - bnp-code
+        - bnp-frontend
+        - bnp-gitops
+        - bnp-operacao
+        - bnp-product
+        - bnp-quality
+        - bnp-sre
+        - Marketplace (geral)
+        - Novo plugin
+    validations:
+      required: true
+
+  - type: input
+    id: artefato
+    attributes:
+      label: Skill / Agent afetado
+      description: Nome da skill ou agent envolvido (deixe em branco se for algo novo).
+      placeholder: ex. code-review, qa-test-designer, sre-engineer
+    validations:
+      required: false
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema ou motivação
+      description: Qual dor, limitação ou oportunidade motiva esta solicitação? Quem é impactado?
+      placeholder: ex. A skill de code-review não considera os padrões definidos no AGENTS.md do repositório...
+    validations:
+      required: true
+
+  - type: textarea
+    id: comportamento-atual
+    attributes:
+      label: Comportamento atual
+      description: Como funciona hoje? Se aplicável, inclua o prompt usado e a resposta obtida.
+      placeholder: Descreva o comportamento atual.
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta / comportamento esperado
+      description: Descreva a melhoria ou alteração desejada e como ela deveria funcionar.
+      placeholder: Descreva a solução proposta.
+    validations:
+      required: true
+
+  - type: textarea
+    id: exemplo-uso
+    attributes:
+      label: Exemplo de uso
+      description: Exemplo de prompt, comando ou cenário em que a melhoria seria usada. Será formatado como código automaticamente.
+      placeholder: |
+        /code-review revisa a branch feature/x considerando o AGENTS.md
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: criterios-aceite
+    attributes:
+      label: Critérios de aceite
+      description: Como saberemos que a solicitação foi atendida? Liste itens objetivos e verificáveis.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Já tentou outra abordagem ou workaround? Por que não resolve?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Impacto / prioridade sugerida
+      description: Qual a urgência na sua visão?
+      options:
+        - Baixa — conveniência, pode esperar
+        - Média — melhora relevante no fluxo de trabalho
+        - Alta — bloqueia ou atrapalha o trabalho do time
+      default: 1
+    validations:
+      required: true
+
+  - type: upload
+    id: anexos
+    attributes:
+      label: Anexos
+      description: Se aplicável, adicione prints, logs ou arquivos de exemplo.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Verifiquei que não existe issue aberta com a mesma solicitação
+          required: true
+        - label: Estou disposto(a) a contribuir com um PR para esta melhoria
+          required: false
