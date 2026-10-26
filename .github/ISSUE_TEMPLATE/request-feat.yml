@@ -83,17 +83,6 @@ body:
       required: true
 
   - type: textarea
-    id: exemplo-uso
-    attributes:
-      label: Exemplo de uso
-      description: Exemplo de prompt, comando ou cenário em que a melhoria seria usada. Será formatado como código automaticamente.
-      placeholder: |
-        /code-review revisa a branch feature/x considerando o AGENTS.md
-      render: markdown
-    validations:
-      required: false
-
-  - type: textarea
     id: criterios-aceite
     attributes:
       label: Critérios de aceite
@@ -101,14 +90,6 @@ body:
       value: |
         - [ ]
         - [ ]
-    validations:
-      required: false
-
-  - type: textarea
-    id: alternativas
-    attributes:
-      label: Alternativas consideradas
-      description: Já tentou outra abordagem ou workaround? Por que não resolve?
     validations:
       required: false
 
